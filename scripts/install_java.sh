@@ -1,7 +1,6 @@
 #!/bin/bash
 install_java() {
-  local version="$1"
-  local dir="$2"
+  local dir="$1"
 
   local download_url="http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz"
   echo "Downloading JAVA [$download_url]"
