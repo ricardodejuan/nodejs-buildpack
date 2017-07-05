@@ -26,7 +26,8 @@ detect_memory() {
   esac
 }
 
-export PATH="$PATH:$HOME/bin:$HOME/node_modules/.bin"
+export JAVA_HOME="/home/vcap/app/.java"
+export PATH="$PATH:$HOME/bin:$HOME/node_modules/.bin:$JAVA_HOME/bin"
 
 calculate_concurrency
 
