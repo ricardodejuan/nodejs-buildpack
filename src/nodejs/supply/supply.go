@@ -232,7 +232,7 @@ func (s *Supplier) CreateDefaultEnv() error {
 		"NPM_CONFIG_LOGLEVEL":   "error",
 		"NODE_MODULES_CACHE":    "true",
 		"NODE_VERBOSE":          "false",
-		"JAVA_HOME":						 "/home/vcap/app/.java"
+		"JAVA_HOME":						 "/home/vcap/app/.java",
 	}
 
 	s.Log.BeginStep("Creating runtime environment")
