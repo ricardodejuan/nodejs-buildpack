@@ -15,4 +15,10 @@ install_java() {
   mv /tmp/jdk/jdk1.8.0_131/* $dir
   chmod +x $dir/bin
   echo "-----> Installation JDK complete"
+
+  # JDK ENV VAR
+  echo "------------------HOME----"
+  echo "$HOME"
+  export PATH="$HOME/app/.java/bin:$PATH"
+  export JAVA_HOME="$HOME/app/.java"
 }
