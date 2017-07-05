@@ -1,4 +1,4 @@
-#binaries_java.sh
+#!/bin/bash
 install_java() {
   local version="$1"
   local dir="$2"
