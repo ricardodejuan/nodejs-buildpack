@@ -28,6 +28,12 @@ detect_memory() {
 
 export PATH="$PATH:$HOME/bin:$HOME/node_modules/.bin"
 
+# JDK ENV VAR
+echo "------------------HOME----"
+echo "$HOME"
+export PATH="$HOME/app/.java/bin:$PATH"
+export JAVA_HOME="$HOME/app/.java"
+
 calculate_concurrency
 
 export MEMORY_AVAILABLE=$MEMORY_AVAILABLE
