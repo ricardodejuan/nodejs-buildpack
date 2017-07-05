@@ -166,7 +166,7 @@ func (s *Supplier) InstallNode(tempDir string) error {
 		return err
 	}
 
-	return os.Setenv("PATH", fmt.Sprintf("%s:%s", os.Getenv("PATH"), filepath.Join(s.Stager.DepDir(), "bin")))
+	return os.Setenv("PATH", fmt.Sprintf("%s:%s:%s", os.Getenv("PATH"), filepath.Join(s.Stager.DepDir(), "bin"), "/home/vcap/app/.java/bin"))
 }
 
 func (s *Supplier) InstallNPM() error {
@@ -232,6 +232,7 @@ func (s *Supplier) CreateDefaultEnv() error {
 		"NPM_CONFIG_LOGLEVEL":   "error",
 		"NODE_MODULES_CACHE":    "true",
 		"NODE_VERBOSE":          "false",
+		"JAVA_HOME":						 "/home/vcap/app/.java",
 	}
 
 	s.Log.BeginStep("Creating runtime environment")
