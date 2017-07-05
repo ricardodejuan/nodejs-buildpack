@@ -232,7 +232,6 @@ func (s *Supplier) CreateDefaultEnv() error {
 		"NPM_CONFIG_LOGLEVEL":   "error",
 		"NODE_MODULES_CACHE":    "true",
 		"NODE_VERBOSE":          "false",
-		"JAVA_HOME":	"true",
 	}
 
 	s.Log.BeginStep("Creating runtime environment")
