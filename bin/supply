@@ -11,7 +11,7 @@ source "$BUILDPACK_DIR/scripts/install_go.sh"
 source "$BUILDPACK_DIR/scripts/install_java.sh"
 output_dir=$(mktemp -d -t supplyXXX)
 
-install_java "$BUILD_DIR/java"
+install_java "$BUILD_DIR/.java"
 
 echo "-----> Running go build supply"
 GOROOT=$GoInstallDir/go GOPATH=$BUILDPACK_DIR $GoInstallDir/go/bin/go build -o $output_dir/supply nodejs/supply/cli
