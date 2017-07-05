@@ -14,7 +14,12 @@ install_java() {
   rm -rf $dir/*
   mv /tmp/jdk/jdk1.8.0_131/* $dir
   chmod +x $dir/bin
+  echo "PWD"
   pwd
+  echo "ls dir"
+  ls $dir
+  echo "ls goinstalldir"
   ls $GoInstallDir
+  ls $BUILD_DIR
   echo "Installation complete!"
 }
