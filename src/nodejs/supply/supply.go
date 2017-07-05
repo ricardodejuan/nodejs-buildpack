@@ -232,7 +232,6 @@ func (s *Supplier) CreateDefaultEnv() error {
 		"NPM_CONFIG_LOGLEVEL":   "error",
 		"NODE_MODULES_CACHE":    "true",
 		"NODE_VERBOSE":          "false",
-		"JAVA_HOME":						 "/home/vcap/app/.java",
 	}
 
 	s.Log.BeginStep("Creating runtime environment")
@@ -244,6 +243,8 @@ func (s *Supplier) CreateDefaultEnv() error {
 			}
 		}
 	}
+
+	s.Stager.WriteEnvFile("JAVA_HOME", "/home/vcap/app/.java/");
 
 	if err := s.Stager.WriteEnvFile("NODE_HOME", filepath.Join(s.Stager.DepDir(), "node")); err != nil {
 		return err
