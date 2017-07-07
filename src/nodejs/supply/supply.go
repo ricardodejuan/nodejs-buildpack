@@ -232,7 +232,6 @@ func (s *Supplier) CreateDefaultEnv() error {
 		"NPM_CONFIG_LOGLEVEL":   "error",
 		"NODE_MODULES_CACHE":    "true",
 		"NODE_VERBOSE":          "false",
-		"JAVA_HOME":						 "/home/vcap/app/.java",
 	}
 
 	s.Log.BeginStep("Creating runtime environment")
@@ -254,7 +253,7 @@ export NODE_ENV=${NODE_ENV:-production}
 export MEMORY_AVAILABLE=$(echo $VCAP_APPLICATION | jq '.limits.mem')
 export WEB_MEMORY=512
 export WEB_CONCURRENCY=1
-export PATH=$(echo $PATH):$(echo $JAVA_HOME)/bin
+export PATH=$(echo $PATH):/home/vcap/app/.java/bin
 `
 
 	return s.Stager.WriteProfileD("node.sh", fmt.Sprintf(scriptContents, filepath.Join("$DEPS_DIR", s.Stager.DepsIdx(), "node")))
