@@ -253,7 +253,7 @@ export NODE_ENV=${NODE_ENV:-production}
 export MEMORY_AVAILABLE=$(echo $VCAP_APPLICATION | jq '.limits.mem')
 export WEB_MEMORY=512
 export WEB_CONCURRENCY=1
-export PATH=$(echo $PATH):/home/vcap/app/.java/bin
+export PATH=$(echo $PATH):$(echo $JAVA_HOME)
 `
 
 	return s.Stager.WriteProfileD("node.sh", fmt.Sprintf(scriptContents, filepath.Join("$DEPS_DIR", s.Stager.DepsIdx(), "node")))
